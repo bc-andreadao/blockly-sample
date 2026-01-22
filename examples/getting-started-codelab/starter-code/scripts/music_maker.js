@@ -5,17 +5,13 @@
  */
 const MusicMaker = {
   queue_: [],
-  player_: new Audio(),
-  queueSound: function (soundUrl) {
-    this.queue_.push(soundUrl);
+  queueColor: function (colorHexCode) {
+    this.queue_.push(colorHexCode);
   },
-  play: function () {
+  colorChange: function (element) {
     const next = this.queue_.shift();
     if (next) {
-      this.player_.src = next;
-      this.player_.play();
+      element.style.backgroundColor = next;
     }
   },
 };
-
-MusicMaker.player_.addEventListener('ended', MusicMaker.play.bind(MusicMaker));

@@ -6,14 +6,15 @@
 (function () {
   let currentButton;
 
-  function handlePlay(event) {
-    // Add code for playing sound.
+  function handleColorChange(event) {
+    // Add code for changing color.
     loadWorkspace(event.target);
 
     let code = javascript.javascriptGenerator.workspaceToCode(
       Blockly.getMainWorkspace(),
     );
-    code += 'MusicMaker.play();';
+
+    code += 'MusicMaker.colorChange(event.target);';
 
     try {
       eval(code);
@@ -46,7 +47,7 @@
   function enableEditMode() {
     document.body.setAttribute('mode', 'edit');
     document.querySelectorAll('.button').forEach((btn) => {
-      btn.removeEventListener('click', handlePlay);
+      btn.removeEventListener('click', handleColorChange);
       btn.addEventListener('click', enableBlocklyMode);
     });
   }
@@ -54,7 +55,7 @@
   function enableMakerMode() {
     document.body.setAttribute('mode', 'maker');
     document.querySelectorAll('.button').forEach((btn) => {
-      btn.addEventListener('click', handlePlay);
+      btn.addEventListener('click', handleColorChange);
       btn.removeEventListener('click', enableBlocklyMode);
     });
   }
@@ -77,21 +78,7 @@
     contents: [
       {
         kind: 'block',
-        type: 'controls_repeat_ext',
-        inputs: {
-          TIMES: {
-            shadow: {
-              type: 'math_number',
-              fields: {
-                NUM: 5,
-              },
-            },
-          },
-        },
-      },
-      {
-        kind: 'block',
-        type: 'play_sound',
+        type: 'change_color',
       },
     ],
   };

@@ -1,17 +1,15 @@
 Blockly.common.defineBlocksWithJsonArray([
   {
-    "type": "play_sound",
-    "message0": "Play %1",
+    "type": "change_color",
+    "message0": "Color %1",
     "args0": [
       {
         "type": "field_dropdown",
         "name": "VALUE",
         "options": [
-          ["C4", "sounds/c4.m4a"],
-          ["D4", "sounds/d4.m4a"],
-          ["E4", "sounds/e4.m4a"],
-          ["F4", "sounds/f4.m4a"],
-          ["G4", "sounds/g4.m4a"]
+          ["light pink", "#FFB6C1"],
+          ["pink", "#FF69B4"],
+          ["red", "#DC143C"],
         ]
       }
     ],
@@ -21,7 +19,7 @@ Blockly.common.defineBlocksWithJsonArray([
   }
 ]);
 
-javascript.javascriptGenerator.forBlock['play_sound'] = function(block) {
+javascript.javascriptGenerator.forBlock['change_color'] = function(block) {
   let value = '\'' + block.getFieldValue('VALUE') + '\'';
-  return 'MusicMaker.queueSound(' + value + ');\n';
+  return 'MusicMaker.queueColor(' + value + ');\n';
 };
