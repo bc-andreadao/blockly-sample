@@ -15,7 +15,7 @@ h1 {
   width: 400px;
   position: relative;
   margin: 0 auto;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.8em;
   line-height: 2.4em;
 }
@@ -39,7 +39,7 @@ h1 {
   transition: left 0.4s;
   height: 460px;
   width: 400px;
-  background-color: #eee;
+  background-color: #6922cc;
 }
 
 [mode='blockly'] .blockly-editor {
@@ -62,7 +62,7 @@ h1 {
 .button {
   width: 120px;
   height: 140px;
-  color: #fff;
+  color: #941717;
   font-size: 3em;
   text-align: center;
   vertical-align: middle;
