@@ -3,7 +3,7 @@
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
-const MusicMaker = {
+const ColorChanger = {
   queue_: [],
   queueColor: function (colorHexCode) {
     this.queue_.push(colorHexCode);

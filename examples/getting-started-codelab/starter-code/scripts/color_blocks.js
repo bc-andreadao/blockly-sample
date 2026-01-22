@@ -21,5 +21,5 @@ Blockly.common.defineBlocksWithJsonArray([
 
 javascript.javascriptGenerator.forBlock['change_color'] = function(block) {
   let value = '\'' + block.getFieldValue('VALUE') + '\'';
-  return 'MusicMaker.queueColor(' + value + ');\n';
+  return 'ColorChanger.queueColor(' + value + ');\n';
 };

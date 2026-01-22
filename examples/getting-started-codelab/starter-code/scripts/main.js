@@ -14,7 +14,7 @@
       Blockly.getMainWorkspace(),
     );
 
-    code += 'MusicMaker.colorChange(event.target);';
+    code += 'ColorChanger.colorChange(event.target);';
 
     try {
       eval(code);
